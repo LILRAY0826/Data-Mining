@@ -12,8 +12,8 @@ for i in range (0, 10):
     test_data.reset_index(inplace=True, drop=True)
     test_data_target = test_data["HeartDisease"]
 
-    predict_result = Model.predict(train_data, test_data)
-    total_score += Model.accuracy(predict_result, test_data_target)
+    predict_result = Naive_Bayes_Classifier.predict(train_data, test_data)
+    total_score += Naive_Bayes_Classifier.accuracy(predict_result, test_data_target)
 
 score = total_score/10
 print('{:.2f}%'.format(score * 100))
