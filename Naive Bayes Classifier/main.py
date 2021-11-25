@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 import Data_Preprocessing
-import Model
+import Naive_Bayes_Classifier
 
 # Split Data
 total_score = 0
