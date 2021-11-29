@@ -2,10 +2,11 @@ from sklearn.model_selection import train_test_split
 import Data_Preprocessing
 import Naive_Bayes_Classifier
 import GaussianNB
+import MultinomialNB
 
 # Split Data
 total_score = 0
-model = "GaussianNB"
+model = "MultinomialNB"
 
 for i in range(0, 10):
     print("Predicting : {:d} times.".format(i + 1))
@@ -22,6 +23,10 @@ for i in range(0, 10):
     elif model == "GaussianNB":
         predict_result = GaussianNB.predict(train_data, test_data)
         total_score += GaussianNB.accuracy(predict_result, test_data_target)
+
+    elif model == "MultinomialNB":
+        predict_result = MultinomialNB.predict(train_data, test_data)
+        total_score += MultinomialNB.accuracy(predict_result, test_data_target)
 
 
 score = total_score/10
